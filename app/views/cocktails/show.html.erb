@@ -1,8 +1,22 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= "https://source.unsplash.com/random?sig=#{rand(1..1000)}&?cocktail" %>);">
+<!-- <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= "https://source.unsplash.com/random?sig=#{rand(1..1000)}&?cocktail" %>);">
   <div class="container">
     <h1><%= @cocktail.name %></h1>
   </div>
-</div>
+</div> -->
+      <div class="banner-show-1">
+        <% if @cocktail.photo.attached? %>
+          <div class="banner-show" style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @cocktail.photo.key, height: 200, width: 1280, crop: :fill %>);'>
+            <div class="container">
+              <h1><%= @cocktail.name %></h1>
+            </div>
+        <% else %>
+          <div class="banner-show" style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= "https://source.unsplash.com/random?sig=#{rand(1..1000)}&?cocktail" %>);'>
+          <div class="container">
+            <h1><%= @cocktail.name %></h1>
+          </div>
+        <% end %>
+      </div>
+
 
 
 
@@ -22,6 +36,5 @@
     <%= link_to new_cocktail_dose_path(@cocktail) do %>
       <div class="btn btn-primary mt-3 ml-2"><i class="fas fa-plus"></i><span class="ml-2">Add new ingredient</span></div>
     <% end %>
-
 
 </div>
