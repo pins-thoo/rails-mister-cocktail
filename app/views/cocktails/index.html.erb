@@ -8,9 +8,9 @@
   <div class="cocktailcontainer">
     <% @cocktails.each do |cocktail| %>
       <% if cocktail.photo.attached? %>
-        <div class="cocktail" id="cocktailall" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo.key, height: 500, width: 400, crop: :fill %>)'>
+        <div class="cocktail" id="cocktailall" style='background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path cocktail.photo.key, height: 500, width: 400, crop: :fill %>)'>
       <% else %>
-        <div class="cocktail" id="cocktailall" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "https://source.unsplash.com/random?sig=#{rand(1..1000)}&?cocktail" %>)'>
+        <div class="cocktail" id="cocktailall" style='background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= "https://source.unsplash.com/random?sig=#{rand(1..1000)}&?cocktail" %>)'>
       <% end %>
 
         <h2><%= cocktail.name %></h2>

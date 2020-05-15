@@ -1,7 +1,8 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: #191919;
-  border-bottom: 1px solid gray;
+  justify-content: center;
+  background: white;
+  border-bottom: 2px solid #F4F4F4;
+  transition: background-color 0.5s ease
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,8 +14,8 @@
 }
 
 h2.logo-title {
-  font-size: 34px;
-  color: white;
+  font-size: 40px;
+  color: black;
   font-family: 'ivymode', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -23,11 +24,17 @@ h2.logo-title {
   &:hover {
     color: #DEDDDE;
   }
+  transition:.6s ease;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: white;
+  color: black;
   &:hover {
     color: #DEDDDE;
   }
+  transition:.6s ease;
+}
+
+.sticky-top {
+  position: sticky;
 }

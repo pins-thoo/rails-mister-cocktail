@@ -48,8 +48,9 @@ body {
   text-decoration: none;
   color: white;
   text-align: center;
-  font-size: 18px;
+  font-size: 21px;
   font-spacing: 2px;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 li.doses {
@@ -76,4 +77,42 @@ li.doses.mb-2 {
 
 .fa-trash-alt:before {
   color: #B2B1B2;
+}
+
+.how-container {
+  width: 100%;
+  height: 21vw;
+  margin-bottom: 30px;
+}
+
+.left-container {
+  float: left;
+  height: 21vw;
+  width: 50%;
+}
+
+.right-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 21vw;
+  background: #fff;
+  width: 50%;
+  float: left;
+}
+
+.left-content {
+  width: 100%;
+  height: 21vw;
+}
+
+.right-content {
+  max-width: 70%;
+}
+
+.unsplash-img {
+  width: 800px;
+  height: 900px;
+  background-size: cover;
+  background-position: 50% 50%;
 }

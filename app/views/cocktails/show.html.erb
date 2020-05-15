@@ -1,40 +1,32 @@
-<!-- <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= "https://source.unsplash.com/random?sig=#{rand(1..1000)}&?cocktail" %>);">
-  <div class="container">
-    <h1><%= @cocktail.name %></h1>
-  </div>
-</div> -->
-      <div class="banner-show-1">
-        <% if @cocktail.photo.attached? %>
-          <div class="banner-show" style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @cocktail.photo.key, height: 200, width: 1280, crop: :fill %>);'>
-            <div class="container">
-              <h1><%= @cocktail.name %></h1>
-            </div>
+<div class="how-container">
+      <div class="left-container">
+        <div class="left-content">
+          <% if @cocktail.photo.attached? %>
+          <img src="<%= cl_image_path @cocktail.photo.key, height: 900, width: 800, crop: :fill %>" alt="">
         <% else %>
-          <div class="banner-show" style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= "https://source.unsplash.com/random?sig=#{rand(1..1000)}&?cocktail" %>);'>
-          <div class="container">
-            <h1><%= @cocktail.name %></h1>
-          </div>
+          <img src="<%= "https://source.unsplash.com/random?sig=#{rand(1..1000)}&?cocktail" %>" alt="" class="unsplash-img">
         <% end %>
+        </div>
       </div>
-
-
-
-
-<div class="container mt-5">
-  <h4 class="index__title mb-3">What you need to enjoy this cocktail</h4>
-<div class="row row-bordered">
-  <% @cocktail.doses.each do |dose| %>
-    <li class="doses mb-2">
-      <i class="far fa-circle mr-2"></i>
-      <strong><%= dose.ingredient.name %></strong>: <span class="dose ml-2"><em><%= dose.description %></em></span>
-      <%= link_to dose_path(dose), method: :delete, data: { confirm: "Delete #{dose.ingredient.name}?" } do  %>
-      <i class="far fa-trash-alt ml-3"></i>
-      <% end %>
-    </li>
-  <% end %>
-</div>
-    <%= link_to new_cocktail_dose_path(@cocktail) do %>
-      <div class="btn btn-primary mt-3 ml-2"><i class="fas fa-plus"></i><span class="ml-2">Add new ingredient</span></div>
-    <% end %>
-
+      <div class="right-container">
+        <div class="right-content">
+          <div class="container mt-5">
+            <h4 class="index__title mb-3">What you need to enjoy this cocktail</h4>
+              <div class="row row-bordered">
+                <% @cocktail.doses.each do |dose| %>
+                  <li class="doses mb-2">
+                    <i class="far fa-circle mr-2"></i>
+                    <strong><%= dose.ingredient.name %></strong>: <span class="dose ml-2"><em><%= dose.description %></em></span>
+                    <%= link_to dose_path(dose), method: :delete, data: { confirm: "Delete #{dose.ingredient.name}?" } do  %>
+                    <i class="far fa-trash-alt ml-3"></i>
+                    <% end %>
+                  </li>
+                <% end %>
+              </div>
+                  <%= link_to new_cocktail_dose_path(@cocktail) do %>
+                    <div class="btn btn-primary mt-3 ml-2"><i class="fas fa-plus"></i><span class="ml-2">Add new ingredient</span></div>
+                  <% end %>
+            </div>
+        </div>
+      </div>
 </div>
