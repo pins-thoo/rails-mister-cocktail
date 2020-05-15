@@ -17,3 +17,14 @@ ingredients['drinks'].each do |ingredient|
 end
 
 puts 'Ingredients created!'
+
+cocktail_name = ['Pisco Punch', 'Classic Tequila', 'Dry Martini']
+
+puts "Creating cocktails.."
+cocktail_name.each do |cocktail|
+  Cocktail.create!(
+    name: cocktail
+  )
+end
+
+puts "Done creating cocktails.."
